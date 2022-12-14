@@ -66,7 +66,7 @@ window.addEventListener("load", function() {
     
     let list = window.document.getElementById("faultyItems");
     list.style.visibility = "hidden";
-    let form = window.document.querySelector("form");
+    let form = document.querySelector("form");
  
     form.addEventListener("submit", function(event) {
         event.preventDefault();
