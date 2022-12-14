@@ -72,7 +72,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             fuel.innerHTML = "Fuel level high enough for launch"
             cargo.innerHTML = "Cargo mass low enough for launch"
             launchStatus.innerHTML = "Shuttle is Ready for Launch";
-            launchStatus.style.color = "rgb(199, 37, 78)";
+            launchStatus.style.color = "rgb(65, 159, 106)";
         }
     }
     
