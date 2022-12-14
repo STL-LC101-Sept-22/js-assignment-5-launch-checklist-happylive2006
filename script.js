@@ -64,9 +64,9 @@ window.addEventListener("load", function() {
         addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image);  
     })
     
-    let list = document.getElementById("faultyItems");
+    let list = window.document.getElementById("faultyItems");
     list.style.visibility = "hidden";
-    let form = document.querySelector("form");
+    let form = window.document.querySelector("form");
  
     form.addEventListener("submit", function(event) {
         event.preventDefault();
