@@ -39,10 +39,10 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let fuel = document.getElementById("fuelStatus");
-    let cargo = document.getElementById("cargoStatus");
-    let pilotStatus = document.getElementById("pilotStatus");
-    let copilotStatus = document.getElementById("copilotStatus");
+    let fuel = window.document.getElementById("fuelStatus");
+    let cargo = window.document.getElementById("cargoStatus");
+    let pilotStatus = window.document.getElementById("pilotStatus");
+    let copilotStatus = window.document.getElementById("copilotStatus");
  
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
         alert("All fields are required!");
@@ -52,7 +52,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         list.style.visibility = "visible";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
-        let launchStatus = document.getElementById("launchStatus");
+        let launchStatus = window.document.getElementById("launchStatus");
         if (fuelLevel < 10000 && cargoLevel <= 10000) {
             fuel.innerHTML = "Fuel level too low for launch";
             cargo.innerHTML = "Cargo mass low enough for launch"
