@@ -1,4 +1,3 @@
-//const { myFetch, pickPlanet } = require("./scriptHelper");
 
 // Write your JavaScript code here!
 //  In scriptHelper.js, you have three functions for this task: myFetch(), pickPlanet(), and addDestinationInfo().
@@ -22,9 +21,8 @@ window.addEventListener("load", function() {
         console.log(listedPlanets);
     }).then(function () {
         console.log(listedPlanets);
+        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
         let selectedPlanet = pickPlanet(listedPlanets);
-         // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-
         addDestinationInfo(document, selectedPlanet.name, selectedPlanet.diameter, selectedPlanet.star, selectedPlanet.distance, selectedPlanet.moons, selectedPlanet.image);  
     })
     
