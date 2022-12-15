@@ -39,13 +39,16 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    //DOM elements
     let fuel = document.getElementById("fuelStatus");
     let cargo = document.getElementById("cargoStatus");
     let pilotStatus = document.getElementById("pilotStatus");
     let copilotStatus = document.getElementById("copilotStatus");
- 
+    
+    //check all fields are filled
     if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
         alert("All fields are required!");
+    //check that fuelLevel and cargoLevel are numbers and pilot and co-pilot are strings
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number" ) {
         alert("Make sure to enter valid information for each field!");
     } else {
