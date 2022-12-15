@@ -49,26 +49,31 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot) === "Is a Number" || validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number" ) {
         alert("Make sure to enter valid information for each field!");
     } else {
+        // Check page before form submission to make sure everything is working
         list.style.visibility = "visible";
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
         let launchStatus = document.getElementById("launchStatus");
         if (fuelLevel < 10000 && cargoLevel <= 10000) {
+            // Shuttle should be not be ready for launch, fuel too low
             fuel.innerHTML = "Fuel level too low for launch";
             cargo.innerHTML = "Cargo mass low enough for launch"
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
             launchStatus.style.color = "rgb(199, 37, 78)";
         } else if (fuelLevel >= 10000 && cargoLevel > 10000) {
+            // Shuttle should not be ready for launch, cargo too high
             fuel.innerHTML = "Fuel level high enough for launch"
             cargo.innerHTML = "Cargo mass too heavy for launch";
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
             launchStatus.style.color = "rgb(199, 37, 78)";
         } else if (fuelLevel < 10000 && cargoLevel > 10000) {
+            // Shuttle should not be ready for launch, fuel too & cargo too high 
             fuel.innerHTML = "Fuel level too low for launch";
             cargo.innerHTML = "Cargo mass too heavy for launch";
             launchStatus.innerHTML = "Shuttle Not Ready for Launch";
             launchStatus.style.color = "rgb(199, 37, 78)";
         } else {
+             // Shuttle should be ready for launch, enough fuel and cargo
             fuel.innerHTML = "Fuel level high enough for launch"
             cargo.innerHTML = "Cargo mass low enough for launch"
             launchStatus.innerHTML = "Shuttle is Ready for Launch";
